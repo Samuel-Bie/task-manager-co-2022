@@ -1,13 +1,17 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
-use App\Project;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Task extends Model
 {
-public function project(){
-    return $this->belongsTo(Project::class, 'projects_id');
-}
+    use HasFactory;
+
+
+    public function project()
+    {
+        return $this->belongsTo(Project::class, 'projects_id');
+    }
 }
